@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>FFSweb</title>
+  
+  
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+
+<body ng-app="feed">
+  
+  
+  
+  
+  <div class="title">
+    Free <span class="black">and</span> Goods 
+    </div>
+    	<hr>
+    	
+   <div ng-controller="CollapseDemoCtrl">
+	<button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">New Post</button>
+	<hr>
+	<div collapse="isCollapsed">
+		<div class="well well-lg" ng-controller="upload">
+		  
+	<form ng-submit="sendPost()">
+	<legend>Make a new Post:</legend>
+	
+	Description of the Item(s) on Sale:<br>
+	<input ng-model="desc"/>
+    
+	
+	Enter Price:<br> 	<input ng-model="pric"/> <br>
+
+	Enter Category:<br> 	<input ng-model="cat"/> <br>
+	
+	Post Title:<br> 	<input ng-model="title"/> <br>
+	
+	<button type="submit" id='postbutton'>POST</button>
+	
+</form>
+
+		</div> 
+	</div>
+</div>
+
+    
+     <div id="menu"> 
+  
+    <p>
+      <div> <a href="index.html" id="indexM">Feed</a> </div>
+      <div> <a href="watchlist.html" id="watchlistM">Watchlist</a> </div>
+      <div> <a href="profile.html" id="profileM">Profile</a></div>
+      <div> <a href="messages.html" id="messagesM">Messages</a> </div>
+      <div> <a href="settings.html" id="settingsM">Settings</a> </div>
+    </p> 
+    
+    </div> 
+    
+    
+    
+    <div class="feed" ng-controller="posting"> <!-- entire feed --> 
+      <div ng-repeat="thing in things" id="post" > <!-- individual post --> 
+        <div id="title"><h1>{{thing.postTitle}}</h1></div>
+        
+        <div class="photos">
+        <div id="photo1">
+           <img ng-src="data:image/JPEG;base64,{{thing.photo1}}" height="100%">
+        </div>
+    <div id="subPhotos"> 
+        <div id="rightPhoto"><img ng-src="img/default.jpg" height="100px"> </div>
+        <div id="leftPhoto"><img ng-src="img/default.jpg" height="100px"> </div>
+        </div>
+        </div>
+        
+  <div id="description"> 
+    <p>{{ thing.description }}</p> <br> 
+  
+    </div> 
+  </div>
+       </div>
+    
+    
+    
+    <!-- Right hand side div extra poop 
+   <div id="extra">
+     
+   </div>
+    
+    --> 
+   
+    
+   
+    <div style="margin-top:5000px"> Testing </div>
+    
+      <!-- scripts -->
+   <script type="text/javascript" src="js/app.js"></script>
+  <!-- controllers --> 
+  <script type="text/javascript" src="js/controllers/MainController.js"></script>
+  <!-- services -->  
+
+<script src="js/main.js"></script>
+   
+    
+  
+ 
+  
+  
+</body>
+</html>
