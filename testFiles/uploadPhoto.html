@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <title>basic</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+  <script src="../../dist/ng-flow-standalone.js"></script>
+  <script src="app.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+        rel="stylesheet"/>
+</head>
+
+<body ng-app="tester">
+  
+  <div ng-controller="PhotoUpload">
+    
+  <div flow-init> 
+  
+  <input type="file" flow-btn />
+ 
+  <br> <br> 
+  <img flow-img="$flow.files[0]" />
+  </div>
+   
+</div>
+
+  <!-- app scripts -->
+  <script src="app.js"></script>
+  <script src="controllers.js"></script>
+  <script src="uploadDir.js"></script>
+</body>
+</html>

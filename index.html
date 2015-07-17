@@ -6,17 +6,10 @@
   <title>FFSweb</title>
   
   
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
-  <script src="jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
   <script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
-  
-  <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
@@ -34,34 +27,7 @@
     </div>
     	<hr>
     	
-   <div ng-controller="CollapseDemoCtrl">
-	<button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">New Post</button>
-	<hr>
-	<div collapse="isCollapsed">
-		<div class="well well-lg" ng-controller="upload">
-		  
-	<form ng-submit="sendPost()">
-	<legend>Make a new Post:</legend>
-	
-	Description of the Item(s) on Sale:<br>
-	<input ng-model="desc"/>
-    
-	
-	Enter Price:<br> 	<input ng-model="pric"/> <br>
-
-	Enter Category:<br> 	<input ng-model="cat"/> <br>
-	
-	Post Title:<br> 	<input ng-model="title"/> <br>
-	
-	<button type="submit" id='postbutton'>POST</button>
-	
-</form>
-
-		</div> 
-	</div>
-</div>
-
-    
+    	
      <div id="menu"> 
   
     <p>
@@ -73,6 +39,54 @@
     </p> 
     
     </div> 
+    
+    
+    
+     <div ng-controller="CollapseDemoCtrl" class="postButtonDiv" style="color:#0000FF">
+	<button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">New Post</button>
+	<br> <br> 
+	<div collapse="isCollapsed">
+		<div class="parentPost" ng-controller="upload">
+		  
+	
+	<form ng-submit="sendPost()" id="postForm">
+
+<label>Title</label>
+<br>
+		<input align="middle" ng-model="title" required/> 
+		<br><br>
+		
+		<label>Category</label>
+		<br> 
+
+<select ng-model="cat">
+  <option value="Appliances">Appliances</option>
+  <option value="Books">Books</option>
+  <option value="Clothing">Clothing</option>
+  <option value="Food">Food</option>
+  <option value="Furniture">Furniture</option>
+  <option value="Games">Games</option>
+  <option value="Misc">Misc</option>
+</select>
+<br><br>
+
+		<label>Price</label> 
+		<br>
+<input align="middle" ng-model="pric"/> 
+<br><br>
+
+<label>Description</label> 
+<br> 
+<textarea align="middle" ng-model="desc">Write your heart out!</textarea>
+
+<br> <br> 
+<input type="submit" id='postbutton'>
+	
+</form>
+
+		</div> 
+	</div>
+</div>
     
     
     
@@ -116,7 +130,7 @@
   <script type="text/javascript" src="js/controllers/MainController.js"></script>
   <!-- services -->  
 
-<script src="js/main.js"></script>
+
    
     
   
