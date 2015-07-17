@@ -1,0 +1,21 @@
+.postButtonDiv {
+  float: center;
+  margin-left: 0%;
+  clear: both;
+}
+
+.postingBody {
+  float: center;
+  margin-left: -50%;
+}
+
+.parenPost {
+  margin-left: -100%;
+  width: 30%;
+  color: orange;
+  background-color: green;
+}
+
+#postForm {
+  color: orange;
+}

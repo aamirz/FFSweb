@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html ng-app="feed"> 
+
+<head>
+  <title>postForm</title>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+<script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/testStyles.css">
+
+</head>
+
+
+<body>
+  
+  
+  <div ng-controller="CollapseDemoCtrl" class="postButtonDiv" style="color:#0000FF">
+	<button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">New Post</button>
+	
+	<div collapse="isCollapsed">
+		<div class="parentPost" ng-controller="upload">
+		  
+	
+	<form ng-submit="sendPost()" id="postForm">
+
+<label>Title</label>
+<br>
+		<input align="middle" ng-model="title" required/> 
+		<br><br>
+		
+		<label>Category</label>
+		<br> 
+
+<select ng-model="cat">
+  <option value="Appliances">Appliances</option>
+  <option value="Books">Books</option>
+  <option value="Clothing">Clothing</option>
+  <option value="Food">Food</option>
+  <option value="Furniture">Furniture</option>
+  <option value="Games">Games</option>
+  <option value="Misc">Misc</option>
+</select>
+<br><br>
+
+		<label>Price</label> 
+		<br>
+<input align="middle" ng-model="pric"/> 
+<br><br>
+
+<label>Description</label> 
+<br> 
+<textarea align="middle" ng-model="desc">Write your heart out!</textarea>
+
+<br> <br> 
+<input type="submit" id='postbutton'>
+	
+</form>
+
+		</div> 
+	</div>
+</div>
+
+
+  
+   <!-- scripts -->
+   <script type="text/javascript" src="js/app.js"></script>
+  <!-- controllers --> 
+  <script type="text/javascript" src="js/controllers/MainController.js"></script>
+  <!-- services -->  
+
+  
+</body>
+
+</html>
