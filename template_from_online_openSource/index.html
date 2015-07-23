@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="feed"> <!--<![endif]-->
+<head>
+<!-- 
+Kool Store Template
+http://www.templatemo.com/preview/templatemo_428_kool_store
+-->
+    <meta charset="utf-8">
+    <title>Princeton's Best Webstore</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+  <script src="../js/ui-bootstrap-tpls-0.13.0.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+ 
+  
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css"> 
+    <link rel="stylesheet" href="css/templatemo-misc.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+
+  <!--  <script src="js/vendor/modernizr-2.6.2.min.js"></script> --> 
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    
+    <header class="site-header">
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="top-header-left">
+                            <a href="#">Sign Up</a>
+                            <a href="#">Log In</a>
+                        </div> <!-- /.top-header-left -->
+                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                <li><a href="#" class="fa fa-dribbble"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-linkedin"></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div> <!-- /.social-icons -->
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.top-header -->
+        
+      <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-8">
+                        <div class="logo">
+                            <h1><a href="#">Free + ForSale</a></h1>
+                        </div> <!-- /.logo -->
+                   </div> <!-- /.col-md-4 -->
+                   <div class="col-md-8 col-sm-6 col-xs-4">
+                        
+                    </div> <!-- /.col-md-8 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.main-header --> 
+        
+        <div class="main-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-7">
+                        <div class="list-menu">
+                            <ul>
+                                <li><a href="index.html">Feed</a></li>
+                                <li><a href="product-detail.html">Messages</a></li>
+                                <li><a href="contact.html">Watchlist</a></li>
+                            </ul>
+                        </div> <!-- /.list-menu -->
+                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-5">
+                        <div class="notification">
+                            <span>Don't hesitate to give away things you do not need! :)</span>
+                        </div>
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.main-nav -->
+    </header> <!-- /.site-header -->
+
+    <div class="content-section" ng-controller="posting">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-item-1" ng-repeat="thing in things">
+                        <div class="product-thumb">
+                            <img ng-src="data:image/JPEG;base64,{{thing.photo1}}" alt="Product Title">
+                        </div> <!-- /.product-thumb -->
+                        <div class="product-content">
+                            <h5><a href="#">{{thing.postTitle}}</a></h5>
+                            <span class="tagline">netId</span>
+                            <span class="price">{{thing.price | currency}}</span>
+                            <p>{{thing.description}}</p>
+                        </div> <!-- /.product-content -->
+                    </div> <!-- /.product-item -->
+                </div> <!-- /.col-md-3 -->
+                
+                <!--<div class="col-md-5">-->
+                <!--    <div class="product-holder">-->
+                <!--        <div class="product-item-2">-->
+                <!--            <div class="product-thumb">-->
+                <!--                <img src="images/featured/1.jpg" alt="Product Title">-->
+                <!--            </div> <!-- /.product-thumb -->
+                <!--            <div class="product-content overlay">-->
+                <!--                <h5><a href="#">Kooler Shirt</a></h5>-->
+                <!--                <span class="tagline">Partner Name</span>-->
+                <!--                <span class="price">$30.00</span>-->
+                <!--                <p>Doloremque quo possimus quas necessitatibus blanditiis excepturi. Commodi, sunt tenetur deleniti labore!</p>-->
+                <!--            </div> <!-- /.product-content -->
+                <!--        </div> <!-- /.product-item-2 -->
+                <!--        <div class="product-item-2">-->
+                <!--            <div class="product-thumb">-->
+                <!--                <img src="images/featured/2.jpg" alt="Product Title">-->
+                <!--            </div> <!-- /.product-thumb -->
+                <!--            <div class="product-content overlay">-->
+                <!--                <h5><a href="#">Koolest Shirt</a></h5>-->
+                <!--                <span class="tagline">Partner Name</span>-->
+                <!--                <span class="price">$45.00</span>-->
+                <!--                <p>Doloremque quo possimus quas necessitatibus blanditiis excepturi. Commodi, sunt tenetur deleniti labore!</p>-->
+                <!--            </div> <!-- /.product-content -->
+                <!--        </div> <!-- /.product-item-2 -->
+                <!--        <div class="clearfix"></div>-->
+                <!--    </div> <!-- /.product-holder -->
+                <!--</div> <!-- /.col-md-5 -->
+                <!--<div class="col-md-4">-->
+                <!--    <div class="product-item-3">-->
+                <!--        <div class="product-thumb">-->
+                <!--            <img src="images/featured/6.jpg" alt="">-->
+                <!--        </div> <!-- /.product-thumb -->
+                <!--        <div class="product-content">-->
+                <!--            <div class="row">-->
+                <!--                <div class="col-md-6 col-sm-6">-->
+                <!--                    <h5><a href="#">Name Of Shirt</a></h5>-->
+                <!--                    <span class="tagline">Partner Name</span>-->
+                <!--                    <span class="price">$20.00</span>-->
+                <!--                </div> <!-- /.col-md-6 -->
+                <!--                <div class="col-md-6 col-sm-6">-->
+                <!--                    <div class="full-row">-->
+                <!--                        <label for="cat">Gender:</label>-->
+                <!--                        <select name="cat" id="cat" class="postform">-->
+                <!--                            <option value="-1">- Select -</option>-->
+                <!--                            <option class="level-0" value="49">Female</option>-->
+                <!--                            <option class="level-0" value="56">Male</option>-->
+                <!--                        </select>-->
+                <!--                    </div>-->
+                <!--                    <div class="full-row">-->
+                <!--                        <label for="cat1">Size:</label>-->
+                <!--                        <select name="cat1" id="cat1" class="postform">-->
+                <!--                            <option value="-1">- Select -</option>-->
+                <!--                            <option class="level-0" value="49">Small</option>-->
+                <!--                            <option class="level-0" value="49">Medium</option>-->
+                <!--                            <option class="level-0" value="56">Large</option>-->
+                <!--                            <option class="level-0" value="56">X-Large</option>-->
+                <!--                        </select>-->
+                <!--                    </div>-->
+                <!--                    <div class="full-row">-->
+                <!--                        <label for="cat2">Color:</label>-->
+                <!--                        <select name="cat2" id="cat2" class="postform">-->
+                <!--                            <option value="-1">- Select -</option>-->
+                <!--                            <option class="level-0" value="2">Blue</option>-->
+                <!--                            <option class="level-0" value="3">Red</option>-->
+                <!--                            <option class="level-0" value="1">Pink</option>-->
+                <!--                            <option class="level-0" value="4">Black</option>-->
+                <!--                            <option class="level-0" value="4">Wlack</option>-->
+                <!--                        </select>-->
+                <!--                    </div>-->
+                <!--                </div> <!-- /.col-md-6 -->
+                <!--                <div class="col-md-12 col-sm-12">-->
+                <!--                    <div class="button-holder">-->
+                <!--                        <a href="#" class="red-btn"><i class="fa fa-angle-down"></i></a>-->
+                <!--                    </div> <!-- /.button-holder -->
+                <!--                </div> <!-- /.col-md-12 -->
+                <!--            </div> <!-- /.row -->
+                <!--        </div> <!-- /.product-content -->
+                <!--    </div> <!-- /.product-item-3 -->
+                <!--</div> <!-- /.col-md-4 -->
+            </div> <!-- /.row -->
+            
+            <!--<div class="row">-->
+            <!--    <div class="col-md-4 col-sm-6 col-xs-12">-->
+            <!--        <div class="product-item-4">-->
+            <!--            <div class="product-thumb">-->
+            <!--                <img src="images/featured/3.jpg" alt="Product Title">-->
+            <!--            </div> <!-- /.product-thumb -->
+            <!--            <div class="product-content overlay">-->
+            <!--                <h5><a href="#">Name Of Shirt</a></h5>-->
+            <!--                <span class="tagline">Partner Name</span>-->
+            <!--                <span class="price">$60.00</span>-->
+            <!--                <p>Doloremque quo possimus quas necessitatibus.</p>-->
+            <!--            </div> <!-- /.product-content -->
+            <!--        </div> <!-- /.product-item-4 -->
+            <!--    </div> <!-- /.col-md-4 -->
+            <!--    <div class="col-md-4 col-sm-6 col-xs-12">-->
+            <!--        <div class="product-item-4">-->
+            <!--            <div class="product-thumb">-->
+            <!--                <img src="images/featured/4.jpg" alt="Product Title">-->
+            <!--            </div> <!-- /.product-thumb -->
+            <!--            <div class="product-content overlay">-->
+            <!--                <h5><a href="#">Name Of Shirt</a></h5>-->
+            <!--                <span class="tagline">Partner Name</span>-->
+            <!--                <span class="price">$30.00</span>-->
+            <!--                <p>Doloremque quo possimus quas necessitatibus.</p>-->
+            <!--            </div> <!-- /.product-content -->
+            <!--        </div> <!-- /.product-item-4 -->
+            <!--    </div> <!-- /.col-md-4 -->
+            <!--    <div class="col-md-4 col-sm-12 col-xs-12">-->
+            <!--        <div class="ads-placemenet">-->
+            <!--            <img src="images/featured/5.jpg" alt="">-->
+            <!--        </div> <!-- /.ads-placement -->
+            <!--    </div> <!-- /.col-md-4 -->
+            <!--</div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.content-section -->
+
+    
+
+
+
+
+
+    <footer class="site-footer">
+        <div class="our-partner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="customNavigation">
+                            <a class="btn prev"><i class="fa fa-angle-left"></i></a>
+                            <a class="btn next"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div id="owl-demo" class="owl-carousel">
+                            <div class="item"> 
+                            	<a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
+                          	</div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
+                            </div>
+                        </div> <!-- /#owl-demo -->
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.our-partner -->
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">About Us</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, debitis recusandae.
+                            <ul class="follow-us">
+                                <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                            </ul> <!-- /.follow-us -->
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-3 -->
+                    <div class="col-md-3">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">Why Choose Us?</h3>
+                            Kool Store is free responsive eCommerce template provided by templatemo website. You can use this layout for any website.
+                            <br><br>Tempore cum mollitia eveniet laboriosam corporis voluptas earum voluptate. Lorem ipsum dolor sit amet.
+                            <br><br>Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for all images.
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-3 -->
+                    <div class="col-md-2">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">Useful Links</h3>
+                            <ul>
+                                <li><a href="#">Our Shop</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-4">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">Our Newsletter</h3>
+                            <div class="newsletter">
+                                <form action="#" method="get">
+                                    <p>Sign up for our regular updates to know when new products are released.</p>
+                                    <input type="text" title="Email" name="email" placeholder="Your Email Here">
+                                    <input type="submit" class="s-button" value="Submit" name="Submit">
+                                </form>
+                            </div> <!-- /.newsletter -->
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-4 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.main-footer -->
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <span>Copyright &copy; 2084 <a href="#">Company Name</a> | Design: <a href="http://www.templatemo.com">templatemo</a></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, expedita soluta mollitia accusamus ut architecto maiores cum fugiat. Pariatur ipsum officiis fuga deleniti alias quia nostrum veritatis enim doloremque eligendi?</p>
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.bottom-footer -->
+    </footer> <!-- /.site-footer -->
+
+    <script type="text/javascript" src="js/app.js"></script>
+  <!-- controllers --> 
+  <script type="text/javascript" src="js/controllers/MainController.js"></script>
+  <!-- services -->  
+
+
+
+</body>
+</html>
