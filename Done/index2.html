@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Html</title>
+	<link rel="stylesheet" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="721551132056-ovgvr2aavb52qqsqiqsud6jo6082nltq.apps.googleusercontent.com">
+	
+	<script>
+	function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail());
+  
+	   var id_token = googleUser.getAuthResponse().id_token;
+	   var xhr = new XMLHttpRequest();
+	   xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
+	   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	   xhr.onload = function() {
+	     console.log('Signed in as: ' + xhr.responseText);
+	   };
+	   xhr.send('idtoken=' + id_token);
+   
+	}
+	</script>
+</head>
+<body>
+	<div class="lg-container">
+		<h1>Welcome To Princeton's Free And For Sale</h1>
+		<form id="lg-form" name="lg-form">
+			
+			<div>
+				<center><img src="login2.png" style="width:50px;height:50px;"></center>
+			</div>
+			<div>		
+				<center>
+					<h6>Login With Gmail:</h6>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>	
+				</center>
+			</div>
+			
+		</form>
+		<div id="message"></div>
+	</div>
+	
+	<center>Princeton's Free and For Sale is here to make it easy for Tigers to trade</center>
+</body>
+</html>
